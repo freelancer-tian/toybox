@@ -1,0 +1,6 @@
+{
+  "intelephense.environment.includePaths": ["vendor/php-stubs/wordpress-stubs"],
+  "[php]": { "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" },
+  "intelephense.files.associations": ["**/*.php", "**/*.phtml"],
+  "intelephense.files.maxSize": 5000000
+}

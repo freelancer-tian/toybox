@@ -1,0 +1,17 @@
+{
+    "name": "silvertongue/toybox",
+    "type": "wordpress-theme",
+    "autoload": {
+        "psr-4": {
+            "Silvertongue\\Toybox\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tian Reagon"
+        }
+    ],
+    "require-dev": {
+        "php-stubs/wordpress-stubs": "^6.8"
+    }
+}

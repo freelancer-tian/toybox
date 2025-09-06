@@ -1,0 +1,25 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/uvth3slpc6gd/public_html/wp-content/themes/toybox
+
+    # Ensure deploy path exists
+    - /bin/mkdir -p $DEPLOYPATH
+
+    # Clean out old files to prevent stale code
+    - /bin/rm -rf $DEPLOYPATH/*
+
+    # Copy top-level theme files
+    - /bin/cp style.css $DEPLOYPATH/
+    - /bin/cp functions.php $DEPLOYPATH/
+    - /bin/cp theme.json $DEPLOYPATH/
+    - /bin/cp readme.md $DEPLOYPATH/
+
+    # Copy directories recursively
+    - /bin/cp -R parts $DEPLOYPATH/
+    - /bin/cp -R templates $DEPLOYPATH/
+    - /bin/cp -R patterns $DEPLOYPATH/
+    - /bin/cp -R inc $DEPLOYPATH/
+
+    # Optional: copy assets if you add them later
+    # - /bin/cp -R assets $DEPLOYPATH/
