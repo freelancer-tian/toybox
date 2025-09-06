@@ -8,6 +8,23 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+function toybox_setup() {
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_theme_support('woocommerce'); // important for shop
+    register_nav_menus(array(
+        'main-menu' => __('Main Menu', 'toybox')
+    ));
+}
+add_action('after_setup_theme', 'toybox_setup');
+
+function toybox_enqueue_scripts() {
+    wp_enqueue_style('toybox-style', get_stylesheet_uri());
+    wp_enqueue_style('toybox-bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css");
+    wp_enqueue_script('toybox-bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'toybox_enqueue_scripts');
+
 
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
