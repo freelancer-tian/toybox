@@ -13,13 +13,14 @@ deployment:
     - /bin/cp style.css $DEPLOYPATH/
     - /bin/cp functions.php $DEPLOYPATH/
     - /bin/cp theme.json $DEPLOYPATH/
-    - /bin/cp readme.md $DEPLOYPATH/
+    - /bin/cp README.md $DEPLOYPATH/
 
     # Copy directories recursively
     - /bin/cp -R parts $DEPLOYPATH/
     - /bin/cp -R templates $DEPLOYPATH/
     - /bin/cp -R patterns $DEPLOYPATH/
     - /bin/cp -R inc $DEPLOYPATH/
+    - /bin/cp -R /home/uvth3slpc6gd/thetoybox/src $DEPLOYPATH/
 
     # Optional: copy assets if you add them later
     # - /bin/cp -R assets $DEPLOYPATH/
